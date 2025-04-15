@@ -39,7 +39,7 @@ public class HelloController {
 
     static class Hello {
         private String name;
-
+        //자바빈 잭?? 겟터셋터, 프로퍼티 방식?
         public String getName() {
             return name;
         }
