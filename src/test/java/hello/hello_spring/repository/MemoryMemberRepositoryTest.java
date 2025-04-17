@@ -9,9 +9,10 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class MemoryMemberRepositoryTest {
+//다른곳에서 import 사용할께 아니기때문에 public을 사용할필요없다
+class MemoryMemberRepositoryTest {
     //새로운 객체
-    MemberRepository repository = new MemoryMemberRepository();
+    MemoryMemberRepository repository = new MemoryMemberRepository();
 
     // 콜백함수
     @AfterEach

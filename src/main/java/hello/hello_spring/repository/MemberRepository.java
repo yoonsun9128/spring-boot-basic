@@ -10,5 +10,4 @@ public interface MemberRepository {
     Optional<Member> findById(Long id); //null 처리하는 방법
     Optional<Member> findByName(String name);
     List<Member> findAll(); //저장된 리스트 모두 변환
-    Void clearStore();
 }
