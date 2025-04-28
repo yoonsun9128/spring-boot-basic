@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 // 순수 java class 그래서 컨트롤러가 인지 못하는것 -> @Service를 넣어주면 쌉가능
-@Service
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;

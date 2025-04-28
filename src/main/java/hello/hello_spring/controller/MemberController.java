@@ -15,4 +15,14 @@ public class MemberController {
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
+
+//    필드 주입 -> 뭔가 다른 활용할 수 있는 방법이 없어서 별로 선호 하지 않는다.
+//    @Autowired private MemberService memberService;
+
+    // setter 주입 -> 누군가가 멤버 컨트롤을 호출할때 public으로 노출이 된 상태라서 다른 누군가가 기본 세팅을 변경할 수 있는 단점이 있다.
+//    private MemberService memberService;
+//    @Autowired
+//    public MemberController(MemberService memberService) {
+//        this.memberService = memberService;
+//    }
 }
