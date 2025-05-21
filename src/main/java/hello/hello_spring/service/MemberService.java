@@ -3,6 +3,8 @@ package hello.hello_spring.service;
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.Optional;
 //@Service
 public class MemberService {
 
+    private static final Logger log = LoggerFactory.getLogger(MemberService.class);
     private final MemberRepository memberRepository;
 
     public MemberService(MemberRepository memberRepository) {
@@ -31,6 +34,19 @@ public class MemberService {
 //        result.ifPresent(m -> {
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
 //        });
+        //로직 걸리는 시간 구성 -> 유지 보수가 힘들다 이부분은
+//        long start = System.currentTimeMillis();
+//
+//        try {
+//            validateDuplicateMember(member); // 중복 회원 검증
+//            memberRepository.save(member);
+//            return member.getId();
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join = " + timeMs + "ms");
+//        }
+
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
         return member.getId();

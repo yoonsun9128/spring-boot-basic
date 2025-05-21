@@ -1,5 +1,6 @@
 package hello.hello_spring;
 
+import hello.hello_spring.aop.TimeTraceAop;
 import hello.hello_spring.repository.JdbcMemberRepository;
 import hello.hello_spring.repository.JdbcTemplateMemberRepository;
 import hello.hello_spring.repository.*;
@@ -21,4 +22,10 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+// 보통은 여기다가 작성 한다 남들이 봤을때 공통 관심 사항을 표현하기위해(cross-cutting concern)
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 }
